@@ -1,0 +1,22 @@
+{
+  "name": "vrchat-heartrate-to-chatbox",
+  "version": "1.0.0",
+  "description": "Mi Bandから取得した心拍数をOSC使ってチャットボックスに送るよ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Assault1892/vrchat-heartrate-to-chatbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Assault1892/vrchat-heartrate-to-chatbox/issues"
+  },
+  "homepage": "https://github.com/Assault1892/vrchat-heartrate-to-chatbox#readme",
+  "dependencies": {
+    "node-osc": "^9.1.1"
+  }
+}
