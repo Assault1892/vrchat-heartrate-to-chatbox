@@ -2,6 +2,10 @@
 const osc = require('node-osc');
 const config = require('./config.json');
 const fs = require("fs");
+const { cursorTo } = require('readline');
+
+// 時間用
+require("date-utils");
 
 // クライアントを生成
 // VRChatに送信する IP:127.0.0.1 ポート:9000
@@ -11,7 +15,12 @@ const client = new osc.Client("127.0.0.1", 9000);
 // ファイル名のハードコーディングはよくないかも。ディレクトリを走査してファイルを探すようにする？
 const hrpath = config.heartratetxt + "\\heartrate.txt";
 
+console.log("Start!");
+
 setInterval(() => {
+
+    // 時間 (これいる?)
+    var currentTime = new Date().toFormat("YYYY/MM/DD HH24:MI:SS");
 
     // ファイルを読み込む
     fs.readFile(hrpath, 'utf8', (err, data) => {
@@ -22,12 +31,12 @@ setInterval(() => {
             console.error(err)
             return
         }
-        // ファイルの中身を出力
-        console.log(data)
         // VRChat用に結合
         var text = "Heartrate: " + data + " BPM";
         // VRChatに送信
         client.send("/chatbox/input", text, true)
+        // コンソールに出力
+        console.log(currentTime + " | " + text)
     })
 
 }, 3000)

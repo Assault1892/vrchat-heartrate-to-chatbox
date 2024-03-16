@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Assault1892/vrchat-heartrate-to-chatbox#readme",
   "dependencies": {
+    "date-utils": "^1.2.21",
     "node-osc": "^9.1.1"
   }
 }
